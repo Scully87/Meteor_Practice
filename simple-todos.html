@@ -3,9 +3,15 @@
 </head>
 
 <body>
-  <section class="container">
+  <div class="container">
     <header>
-      <h1>Todo List</h1>
+      <h1>Todo List ({{incompleteCount}})</h1>
+
+      <label class="hide-completed">
+        <input type="checkbox" checked="{{hideCompleted}}" />
+        Hide Completed Tasks
+      </label>
+
       <form class="new-task">
         <input type="text" name="text" placeholder="Type to add new tasks" />
       </form>
@@ -16,11 +22,9 @@
         {{> task}}
       {{/each}}
     </ul>
-  </section>
+  </div>
 </body>
 
-
-<!-- Everything inside <template> tags is compiled into Meteor templates, which can be included inside HTML with {{> templateName}} or referenced in your JavaScript with Template.templateName. -->
 <template name="task">
   <li class="{{#if checked}}checked{{/if}}">
     <button class="delete">&times;</button>
