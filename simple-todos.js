@@ -1,5 +1,8 @@
-if (Meteor.isClient) {
+// tells mongo db to store "tasks"
+Tasks = new Mongo.Collection("tasks");
 
+if (Meteor.isClient) {
+   // This code only runs on the client
   Template.body.helpers({
     tasks: [
       { text: "This is task 1"},
